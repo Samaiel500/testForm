@@ -55,7 +55,7 @@ h1, h2, h3, h4 {
   padding-bottom: 33px;
   padding-left: 21px;
   background: #FFFFFF;
-  &_text {
+  &_text {  
     font-family: 'WorkSans';
     font-size: 14px;
     line-height: 16px;
@@ -83,6 +83,9 @@ h1, h2, h3, h4 {
   &_item {
     display: flex;
     flex-direction: column;
+    transform: translate(0, -40%);
+    opacity: 0;
+    transition: all .8s;
     input {
       border: none;
       border-bottom: 1px solid #F2F2F2;
@@ -90,11 +93,16 @@ h1, h2, h3, h4 {
       font-size: 14px;
       font-weight: 400;
       color: #111111;
+      background-color: rgba(0, 0, 0, 0);
+      &:focus {
+        outline-color: $main-color;
+      }
     }
     select {
       height: 100%;
       border: none;
-      border-bottom: 1px solid #F2F2F2;;
+      border-bottom: 1px solid #F2F2F2;
+      background-color: rgba(0, 0, 0, 0);
     }
     option {
       font-family: 'WorkSans';
@@ -145,6 +153,44 @@ h1, h2, h3, h4 {
   }
 }
 
+._error {
+  border-bottom: 2px solid #FF2222 !important;
+  color:#FF2222 !important;
+}
+
+#bgsvg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.people {
+  fill: none;
+  stroke: #F9FAFF;
+  stroke-width: 4px;
+  transition: all 1s ease-in-out;
+  stroke-dasharray: 3810;
+  stroke-dashoffset: 3810;
+  animation-duration: 15s;
+  animation-delay: 1s;
+  animation-name: like;
+  animation-fill-mode: forwards;
+}
+@keyframes like {
+  0% {
+    fill: #FFFFFF;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #F9FAFF;
+  }
+}
+/* .svg-people {
+  &:hover {
+    .people {
+      stroke-dashoffset: 0;
+    }
+  }
+} */
 .options {
   display: flex;
   margin-top: 3px;
@@ -191,4 +237,4 @@ h1, h2, h3, h4 {
 }
 
 
-//@import "media";
+@import "media";
