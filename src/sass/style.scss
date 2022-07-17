@@ -150,12 +150,40 @@ h1, h2, h3, h4 {
     font-size: 14px;
     line-height: 18px;
     color: #FFFFFF;
+    transition: all .5s ease-in-out;
+    
+  }
+}
+.button_req {
+  animation-name: buttonanimation;
+  animation-duration: .5s;
+}
+@keyframes buttonanimation {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
   }
 }
 
 ._error {
   border-bottom: 2px solid #FF2222 !important;
   color:#FF2222 !important;
+}
+
+.message {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 1;
+  font-family: 'WorkSans';
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 300;
+  color: #FF2222;
 }
 
 #bgsvg {
@@ -184,13 +212,7 @@ h1, h2, h3, h4 {
     fill: #F9FAFF;
   }
 }
-/* .svg-people {
-  &:hover {
-    .people {
-      stroke-dashoffset: 0;
-    }
-  }
-} */
+
 .options {
   display: flex;
   margin-top: 3px;

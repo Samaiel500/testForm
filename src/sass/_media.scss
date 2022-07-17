@@ -10,6 +10,10 @@
             margin-right: 135px;
         }
     }
+    .message {
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
 }
 
 @media (max-width: 670px) {
@@ -45,7 +49,7 @@
 
 @media (max-width: 480px) {
     .wrapper {
-        height: 740px;
+        height: 800px;
     }
     .sign {
         min-width: 50px;
@@ -70,7 +74,7 @@
 
 @media (max-width: 320px) {
     .wrapper {
-        height: 770px;
+        height: 820px;
     }
     .form {
         &_birth {
