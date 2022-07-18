@@ -21,12 +21,27 @@ document.addEventListener('DOMContentLoaded', function () {
     //Form validate
     const form = document.getElementById('form');
     const formButton = document.querySelector('.form_button');
+    const formBody = document.querySelector('.form');
+    const thank = document.querySelector('.thank');
     form.addEventListener('submit', formSend);
 
     async function formSend(e) {
         e.preventDefault();
 
         let error = formValidate(form);
+        let formData = new FormData(form);
+        const data = {};
+        formData.forEach(function (value, key) {
+            data[key] = value;
+        })
+
+        if (error === 0) {
+            sendForm('http://localhost:3004/requests', data)
+            formBody.style.display = 'none';
+            thank.style.display = 'flex';
+        } else {
+
+        }
     }
     
     function formValidate(form) {
@@ -60,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+        return error;
     }
     //Add nad Remove class .error
     function formAddError(input) {
@@ -92,5 +108,19 @@ document.addEventListener('DOMContentLoaded', function () {
     function removeAnimationButton() {
         formButton.classList.remove('button_req');
     };
+    //Send form JSON
+    async function sendForm(url, data) {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        if (!response.ok) {
+            throw new Error(`Ошибка по адресу ${url}`);
+        }
+        return await response.json();
+    }
 });
 

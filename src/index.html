@@ -42,7 +42,7 @@
                         </div>
                         <div class="form_item">
                             <label for="formEmail" class="form_label">E-mail</label>
-                            <input class="_req _email" id="formEmail" type="text" name="email">
+                            <input required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$" class="_req _email" id="formEmail" type="text" name="email">
                         </div>
                         <div class="form_item form_birth">
                             <div class="form_label">Date of Birth</div>
@@ -159,10 +159,13 @@
                     </div>
                 </form>
             </div>
+            <div class="thank">
+                <h3>Thank You!</h3>
+                <h4>you registered!</h4>
+            </div>
         </div>
     </section>
     
-    <script src="js/jquery.validate.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
