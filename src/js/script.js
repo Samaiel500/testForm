@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', function () {
         visibleForm();
     }
 
+    //Email check
+    const check = document.querySelector('._email');
+    check.addEventListener('change', (event) => {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(event.target.value)) {
+            check.style.background = 'url(../icons/ok.svg) no-repeat 100% 8px';
+        } else {
+            check.style.background = 'none';
+        }
+    });
+
     //Form validate
     const form = document.getElementById('form');
     const formButton = document.querySelector('.form_button');
@@ -39,8 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
             sendForm('http://localhost:3004/requests', data)
             formBody.style.display = 'none';
             thank.style.display = 'flex';
+            form.reset();
         } else {
-
+            //alert('Ошибка!');
         }
     }
     
