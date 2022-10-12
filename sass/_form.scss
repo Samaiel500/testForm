@@ -1,0 +1,157 @@
+//Form
+.form {
+  position: relative;
+  width: 100%;
+  padding-top: 39px;
+  padding-right: 22px;
+  padding-bottom: 33px;
+  padding-left: 21px;
+  background: #FFFFFF;
+  transition: all .3s ease-in-out;
+  &_text {  
+    font-family: 'WorkSans';
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #111111;
+    margin-bottom: 20px;
+  }
+  &_body {
+    height: 100%;
+    h2 {
+      font-family: 'WorkSans';
+      font-size: 22px;
+      line-height: 26px;
+      font-weight: 500;
+      letter-spacing: -0.46px;
+      color: #111111;
+    }
+  }
+  &_items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 10px;
+  }
+  &_item {
+    display: flex;
+    flex-direction: column;
+    transform: translate(0, -40%);
+    opacity: 0;
+    transition: all .8s;
+    ._email {
+        background: none;
+    }
+    input {
+      border: none;
+      border-bottom: 1px solid #F2F2F2;
+      font-family: 'WorkSans';
+      font-size: 14px;
+      font-weight: 400;
+      color: #111111;
+      background-color: rgba(0, 0, 0, 0);
+      &:focus {
+        outline-color: $main-color;
+      }
+    }
+    select {
+      height: 100%;
+      border: none;
+      border-bottom: 1px solid #F2F2F2;
+      background-color: rgba(0, 0, 0, 0);
+    }
+    option {
+      font-family: 'WorkSans';
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+      color: #111111;
+
+    }
+  }
+  &_label {
+    font-family: 'WorkSans';
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 300;
+    color: #7C7C7C;
+  }
+  &_down {
+    position: absolute;
+    bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_descr {
+    font-family: 'WorkSans';
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 300;
+    color: #000000;
+    margin-right: 186px;
+    a {
+      color: $main-color;
+      font-weight: 500;
+    }
+
+  }
+  &_button {
+    background: #5A61ED;
+    border: none;
+    width: 154px;
+    height: 32px;
+    font-family: 'PT Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    transition: all .5s ease-in-out;
+    
+  }
+}
+
+.options {
+  display: flex;
+  margin-top: 3px;
+  &_input {
+    display: none;
+    &:checked + .options_label::after {
+      transform: scale(1);
+    }
+  }
+  &_item {
+    margin-right: 30px;
+  }
+  &_label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'WorkSans';
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #111111;
+    &::before {
+      content: '';
+      flex: 0 0 13px;
+      height: 13px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      border: 1px solid $main-color;
+      margin-right: 6px;
+    }
+    &::after {
+      transition: transform .3s;
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      width: 7px;
+      height: 7px;
+      background-color: $main-color;
+      border-radius: 50%;
+      transform: scale(0);
+    }
+  }
+}

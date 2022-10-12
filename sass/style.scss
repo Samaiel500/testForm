@@ -1,0 +1,133 @@
+* {
+  font-family: "WorkSans", sans-serif;
+  box-sizing: border-box;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+@import "variables";
+@import 'form';
+
+.main {
+  background: #F4F5FC;
+  min-height: 100vh;
+  padding: 30px;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 665px;
+  height: 481px;
+}
+.sign {
+  position: relative;
+  overflow: hidden;
+  min-width: 138px;
+  height: 100%;
+  background: $main-color;
+  h1 {
+    position: absolute;
+    bottom: 21px;
+    right: 6px;
+    font-family: 'PT Sans';
+    font-weight: 400;
+    font-size: 49px;
+    line-height: 63px;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+  }
+}
+
+//Thank for registered
+.thank {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-top: 39px;
+  padding-right: 22px;
+  padding-bottom: 33px;
+  padding-left: 63px;
+  background: #FFFFFF;
+  transition: all .3s ease-in-out;
+  h3 {
+    font-family: 'WorkSans';
+    font-size: 22px;
+    line-height: 35px;
+    letter-spacing: -0.46px;
+    font-weight: 500;
+    color: #111111;
+  }
+  h4 {
+    font-family: 'WorkSans';
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 300;
+    color: #111111;
+  }
+}
+
+.button_req {
+  animation-name: buttonanimation;
+  animation-duration: .5s;
+}
+@keyframes buttonanimation {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+._error {
+  border-bottom: 2px solid #FF2222 !important;
+  color:#FF2222 !important;
+}
+
+.message {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  z-index: 1;
+  font-family: 'WorkSans';
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 300;
+  color: #FF2222;
+}
+
+#bgsvg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.people {
+  fill: none;
+  stroke: #F9FAFF;
+  stroke-width: 4px;
+  transition: all 1s ease-in-out;
+  stroke-dasharray: 3810;
+  stroke-dashoffset: 3810;
+  animation-duration: 15s;
+  animation-delay: 1s;
+  animation-name: like;
+  animation-fill-mode: forwards;
+}
+@keyframes like {
+  0% {
+    fill: #FFFFFF;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #F9FAFF;
+  }
+}
+
+@import "media";
